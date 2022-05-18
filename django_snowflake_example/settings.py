@@ -79,6 +79,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    # Create a user in snowflake, and enter the username and password here.
+    # The account can be found in snowflake under Admin -> Accounts
+    # Copy the url using the paperclip icon next to the account name.
+    # The url will be of the following form and you want the first part, after // and before .snowflakecomputing
+    # https://<account_name>.snowflakecomputing.com
+    # This app is using one of the tables under snowflake sample data.
+    'snowflake_analytics': {
+        'ENGINE': 'django_snowflake',
+        'USER': '<username_from_snowflake>',
+        'PASSWORD': '<password_for_user>',
+        'ACCOUNT': '<account_name>',
+        'DATABASE': 'SNOWFLAKE_SAMPLE_DATA',
+        'WAREHOUSE': 'COMPUTE_WH',
+        'SCHEMA': 'TPCDS_SF100TCL',
+        'ROLE': 'PUBLIC',
     }
 }
 

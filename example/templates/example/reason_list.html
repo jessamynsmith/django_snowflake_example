@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+          border: 1px solid #aaa;
+          padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<h3>Reasons</h3>
+
+<table>
+    <tr>
+        <th>PK</th>
+        <th>Identifier</th>
+        <th>Description</th>
+    </tr>
+    {% for reason in object_list %}
+    <tr>
+        <td>
+            {{ reason.R_REASON_SK }}
+        </td>
+        <td>
+            {{ reason.R_REASON_ID }}
+        </td>
+        <td>
+            {{ reason.R_REASON_DESC }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
